@@ -9,38 +9,386 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppProfileRouteImport } from './routes/app.profile'
+import { Route as AppLogTreatmentRouteImport } from './routes/app.log-treatment'
+import { Route as AppFormularyRouteImport } from './routes/app.formulary'
+import { Route as AppAlertsRouteImport } from './routes/app.alerts'
+import { Route as AppVetIndexRouteImport } from './routes/app.vet.index'
+import { Route as AppRegulatorIndexRouteImport } from './routes/app.regulator.index'
+import { Route as AppLabIndexRouteImport } from './routes/app.lab.index'
+import { Route as AppFarmsIndexRouteImport } from './routes/app.farms.index'
+import { Route as AppFarmerIndexRouteImport } from './routes/app.farmer.index'
+import { Route as AppAdminIndexRouteImport } from './routes/app.admin.index'
+import { Route as AppVetPatientsRouteImport } from './routes/app.vet.patients'
+import { Route as AppVetLogsRouteImport } from './routes/app.vet.logs'
+import { Route as AppVetIssueRouteImport } from './routes/app.vet.issue'
+import { Route as AppVetComplianceRouteImport } from './routes/app.vet.compliance'
+import { Route as AppRegulatorViolationsRouteImport } from './routes/app.regulator.violations'
+import { Route as AppRegulatorInspectionsRouteImport } from './routes/app.regulator.inspections'
+import { Route as AppRegulatorAnalyticsRouteImport } from './routes/app.regulator.analytics'
+import { Route as AppLabUploadRouteImport } from './routes/app.lab.upload'
+import { Route as AppLabHistoryRouteImport } from './routes/app.lab.history'
+import { Route as AppFarmsRegisterRouteImport } from './routes/app.farms.register'
+import { Route as AppFarmerPrescriptionsRouteImport } from './routes/app.farmer.prescriptions'
+import { Route as AppFarmerAnimalsRouteImport } from './routes/app.farmer.animals'
+import { Route as AppAnimalsIdRouteImport } from './routes/app.animals.$id'
+import { Route as AppAdminUsersRouteImport } from './routes/app.admin.users'
+import { Route as AppAdminSettingsRouteImport } from './routes/app.admin.settings'
+import { Route as AppAdminI18nRouteImport } from './routes/app.admin.i18n'
+import { Route as AppAdminAuditRouteImport } from './routes/app.admin.audit'
 
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppProfileRoute = AppProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppLogTreatmentRoute = AppLogTreatmentRouteImport.update({
+  id: '/log-treatment',
+  path: '/log-treatment',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFormularyRoute = AppFormularyRouteImport.update({
+  id: '/formulary',
+  path: '/formulary',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAlertsRoute = AppAlertsRouteImport.update({
+  id: '/alerts',
+  path: '/alerts',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppVetIndexRoute = AppVetIndexRouteImport.update({
+  id: '/vet/',
+  path: '/vet/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRegulatorIndexRoute = AppRegulatorIndexRouteImport.update({
+  id: '/regulator/',
+  path: '/regulator/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppLabIndexRoute = AppLabIndexRouteImport.update({
+  id: '/lab/',
+  path: '/lab/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFarmsIndexRoute = AppFarmsIndexRouteImport.update({
+  id: '/farms/',
+  path: '/farms/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFarmerIndexRoute = AppFarmerIndexRouteImport.update({
+  id: '/farmer/',
+  path: '/farmer/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAdminIndexRoute = AppAdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppVetPatientsRoute = AppVetPatientsRouteImport.update({
+  id: '/vet/patients',
+  path: '/vet/patients',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppVetLogsRoute = AppVetLogsRouteImport.update({
+  id: '/vet/logs',
+  path: '/vet/logs',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppVetIssueRoute = AppVetIssueRouteImport.update({
+  id: '/vet/issue',
+  path: '/vet/issue',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppVetComplianceRoute = AppVetComplianceRouteImport.update({
+  id: '/vet/compliance',
+  path: '/vet/compliance',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRegulatorViolationsRoute = AppRegulatorViolationsRouteImport.update({
+  id: '/regulator/violations',
+  path: '/regulator/violations',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRegulatorInspectionsRoute = AppRegulatorInspectionsRouteImport.update({
+  id: '/regulator/inspections',
+  path: '/regulator/inspections',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRegulatorAnalyticsRoute = AppRegulatorAnalyticsRouteImport.update({
+  id: '/regulator/analytics',
+  path: '/regulator/analytics',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppLabUploadRoute = AppLabUploadRouteImport.update({
+  id: '/lab/upload',
+  path: '/lab/upload',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppLabHistoryRoute = AppLabHistoryRouteImport.update({
+  id: '/lab/history',
+  path: '/lab/history',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFarmsRegisterRoute = AppFarmsRegisterRouteImport.update({
+  id: '/farms/register',
+  path: '/farms/register',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFarmerPrescriptionsRoute = AppFarmerPrescriptionsRouteImport.update({
+  id: '/farmer/prescriptions',
+  path: '/farmer/prescriptions',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFarmerAnimalsRoute = AppFarmerAnimalsRouteImport.update({
+  id: '/farmer/animals',
+  path: '/farmer/animals',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAnimalsIdRoute = AppAnimalsIdRouteImport.update({
+  id: '/animals/$id',
+  path: '/animals/$id',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAdminUsersRoute = AppAdminUsersRouteImport.update({
+  id: '/admin/users',
+  path: '/admin/users',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAdminSettingsRoute = AppAdminSettingsRouteImport.update({
+  id: '/admin/settings',
+  path: '/admin/settings',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAdminI18nRoute = AppAdminI18nRouteImport.update({
+  id: '/admin/i18n',
+  path: '/admin/i18n',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAdminAuditRoute = AppAdminAuditRouteImport.update({
+  id: '/admin/audit',
+  path: '/admin/audit',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
+  '/app/alerts': typeof AppAlertsRoute
+  '/app/formulary': typeof AppFormularyRoute
+  '/app/log-treatment': typeof AppLogTreatmentRoute
+  '/app/profile': typeof AppProfileRoute
+  '/app/admin/audit': typeof AppAdminAuditRoute
+  '/app/admin/i18n': typeof AppAdminI18nRoute
+  '/app/admin/settings': typeof AppAdminSettingsRoute
+  '/app/admin/users': typeof AppAdminUsersRoute
+  '/app/animals/$id': typeof AppAnimalsIdRoute
+  '/app/farmer/animals': typeof AppFarmerAnimalsRoute
+  '/app/farmer/prescriptions': typeof AppFarmerPrescriptionsRoute
+  '/app/farms/register': typeof AppFarmsRegisterRoute
+  '/app/lab/history': typeof AppLabHistoryRoute
+  '/app/lab/upload': typeof AppLabUploadRoute
+  '/app/regulator/analytics': typeof AppRegulatorAnalyticsRoute
+  '/app/regulator/inspections': typeof AppRegulatorInspectionsRoute
+  '/app/regulator/violations': typeof AppRegulatorViolationsRoute
+  '/app/vet/compliance': typeof AppVetComplianceRoute
+  '/app/vet/issue': typeof AppVetIssueRoute
+  '/app/vet/logs': typeof AppVetLogsRoute
+  '/app/vet/patients': typeof AppVetPatientsRoute
+  '/app/admin/': typeof AppAdminIndexRoute
+  '/app/farmer/': typeof AppFarmerIndexRoute
+  '/app/farms/': typeof AppFarmsIndexRoute
+  '/app/lab/': typeof AppLabIndexRoute
+  '/app/regulator/': typeof AppRegulatorIndexRoute
+  '/app/vet/': typeof AppVetIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
+  '/app/alerts': typeof AppAlertsRoute
+  '/app/formulary': typeof AppFormularyRoute
+  '/app/log-treatment': typeof AppLogTreatmentRoute
+  '/app/profile': typeof AppProfileRoute
+  '/app/admin/audit': typeof AppAdminAuditRoute
+  '/app/admin/i18n': typeof AppAdminI18nRoute
+  '/app/admin/settings': typeof AppAdminSettingsRoute
+  '/app/admin/users': typeof AppAdminUsersRoute
+  '/app/animals/$id': typeof AppAnimalsIdRoute
+  '/app/farmer/animals': typeof AppFarmerAnimalsRoute
+  '/app/farmer/prescriptions': typeof AppFarmerPrescriptionsRoute
+  '/app/farms/register': typeof AppFarmsRegisterRoute
+  '/app/lab/history': typeof AppLabHistoryRoute
+  '/app/lab/upload': typeof AppLabUploadRoute
+  '/app/regulator/analytics': typeof AppRegulatorAnalyticsRoute
+  '/app/regulator/inspections': typeof AppRegulatorInspectionsRoute
+  '/app/regulator/violations': typeof AppRegulatorViolationsRoute
+  '/app/vet/compliance': typeof AppVetComplianceRoute
+  '/app/vet/issue': typeof AppVetIssueRoute
+  '/app/vet/logs': typeof AppVetLogsRoute
+  '/app/vet/patients': typeof AppVetPatientsRoute
+  '/app/admin': typeof AppAdminIndexRoute
+  '/app/farmer': typeof AppFarmerIndexRoute
+  '/app/farms': typeof AppFarmsIndexRoute
+  '/app/lab': typeof AppLabIndexRoute
+  '/app/regulator': typeof AppRegulatorIndexRoute
+  '/app/vet': typeof AppVetIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
+  '/app/alerts': typeof AppAlertsRoute
+  '/app/formulary': typeof AppFormularyRoute
+  '/app/log-treatment': typeof AppLogTreatmentRoute
+  '/app/profile': typeof AppProfileRoute
+  '/app/admin/audit': typeof AppAdminAuditRoute
+  '/app/admin/i18n': typeof AppAdminI18nRoute
+  '/app/admin/settings': typeof AppAdminSettingsRoute
+  '/app/admin/users': typeof AppAdminUsersRoute
+  '/app/animals/$id': typeof AppAnimalsIdRoute
+  '/app/farmer/animals': typeof AppFarmerAnimalsRoute
+  '/app/farmer/prescriptions': typeof AppFarmerPrescriptionsRoute
+  '/app/farms/register': typeof AppFarmsRegisterRoute
+  '/app/lab/history': typeof AppLabHistoryRoute
+  '/app/lab/upload': typeof AppLabUploadRoute
+  '/app/regulator/analytics': typeof AppRegulatorAnalyticsRoute
+  '/app/regulator/inspections': typeof AppRegulatorInspectionsRoute
+  '/app/regulator/violations': typeof AppRegulatorViolationsRoute
+  '/app/vet/compliance': typeof AppVetComplianceRoute
+  '/app/vet/issue': typeof AppVetIssueRoute
+  '/app/vet/logs': typeof AppVetLogsRoute
+  '/app/vet/patients': typeof AppVetPatientsRoute
+  '/app/admin/': typeof AppAdminIndexRoute
+  '/app/farmer/': typeof AppFarmerIndexRoute
+  '/app/farms/': typeof AppFarmsIndexRoute
+  '/app/lab/': typeof AppLabIndexRoute
+  '/app/regulator/': typeof AppRegulatorIndexRoute
+  '/app/vet/': typeof AppVetIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/app'
+    | '/app/alerts'
+    | '/app/formulary'
+    | '/app/log-treatment'
+    | '/app/profile'
+    | '/app/admin/audit'
+    | '/app/admin/i18n'
+    | '/app/admin/settings'
+    | '/app/admin/users'
+    | '/app/animals/$id'
+    | '/app/farmer/animals'
+    | '/app/farmer/prescriptions'
+    | '/app/farms/register'
+    | '/app/lab/history'
+    | '/app/lab/upload'
+    | '/app/regulator/analytics'
+    | '/app/regulator/inspections'
+    | '/app/regulator/violations'
+    | '/app/vet/compliance'
+    | '/app/vet/issue'
+    | '/app/vet/logs'
+    | '/app/vet/patients'
+    | '/app/admin/'
+    | '/app/farmer/'
+    | '/app/farms/'
+    | '/app/lab/'
+    | '/app/regulator/'
+    | '/app/vet/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/app'
+    | '/app/alerts'
+    | '/app/formulary'
+    | '/app/log-treatment'
+    | '/app/profile'
+    | '/app/admin/audit'
+    | '/app/admin/i18n'
+    | '/app/admin/settings'
+    | '/app/admin/users'
+    | '/app/animals/$id'
+    | '/app/farmer/animals'
+    | '/app/farmer/prescriptions'
+    | '/app/farms/register'
+    | '/app/lab/history'
+    | '/app/lab/upload'
+    | '/app/regulator/analytics'
+    | '/app/regulator/inspections'
+    | '/app/regulator/violations'
+    | '/app/vet/compliance'
+    | '/app/vet/issue'
+    | '/app/vet/logs'
+    | '/app/vet/patients'
+    | '/app/admin'
+    | '/app/farmer'
+    | '/app/farms'
+    | '/app/lab'
+    | '/app/regulator'
+    | '/app/vet'
+  id:
+    | '__root__'
+    | '/'
+    | '/app'
+    | '/app/alerts'
+    | '/app/formulary'
+    | '/app/log-treatment'
+    | '/app/profile'
+    | '/app/admin/audit'
+    | '/app/admin/i18n'
+    | '/app/admin/settings'
+    | '/app/admin/users'
+    | '/app/animals/$id'
+    | '/app/farmer/animals'
+    | '/app/farmer/prescriptions'
+    | '/app/farms/register'
+    | '/app/lab/history'
+    | '/app/lab/upload'
+    | '/app/regulator/analytics'
+    | '/app/regulator/inspections'
+    | '/app/regulator/violations'
+    | '/app/vet/compliance'
+    | '/app/vet/issue'
+    | '/app/vet/logs'
+    | '/app/vet/patients'
+    | '/app/admin/'
+    | '/app/farmer/'
+    | '/app/farms/'
+    | '/app/lab/'
+    | '/app/regulator/'
+    | '/app/vet/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AppRoute: typeof AppRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +396,263 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/profile': {
+      id: '/app/profile'
+      path: '/profile'
+      fullPath: '/app/profile'
+      preLoaderRoute: typeof AppProfileRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/log-treatment': {
+      id: '/app/log-treatment'
+      path: '/log-treatment'
+      fullPath: '/app/log-treatment'
+      preLoaderRoute: typeof AppLogTreatmentRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/formulary': {
+      id: '/app/formulary'
+      path: '/formulary'
+      fullPath: '/app/formulary'
+      preLoaderRoute: typeof AppFormularyRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/alerts': {
+      id: '/app/alerts'
+      path: '/alerts'
+      fullPath: '/app/alerts'
+      preLoaderRoute: typeof AppAlertsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/vet/': {
+      id: '/app/vet/'
+      path: '/vet'
+      fullPath: '/app/vet/'
+      preLoaderRoute: typeof AppVetIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/regulator/': {
+      id: '/app/regulator/'
+      path: '/regulator'
+      fullPath: '/app/regulator/'
+      preLoaderRoute: typeof AppRegulatorIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/lab/': {
+      id: '/app/lab/'
+      path: '/lab'
+      fullPath: '/app/lab/'
+      preLoaderRoute: typeof AppLabIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/farms/': {
+      id: '/app/farms/'
+      path: '/farms'
+      fullPath: '/app/farms/'
+      preLoaderRoute: typeof AppFarmsIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/farmer/': {
+      id: '/app/farmer/'
+      path: '/farmer'
+      fullPath: '/app/farmer/'
+      preLoaderRoute: typeof AppFarmerIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/admin/': {
+      id: '/app/admin/'
+      path: '/admin'
+      fullPath: '/app/admin/'
+      preLoaderRoute: typeof AppAdminIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/vet/patients': {
+      id: '/app/vet/patients'
+      path: '/vet/patients'
+      fullPath: '/app/vet/patients'
+      preLoaderRoute: typeof AppVetPatientsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/vet/logs': {
+      id: '/app/vet/logs'
+      path: '/vet/logs'
+      fullPath: '/app/vet/logs'
+      preLoaderRoute: typeof AppVetLogsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/vet/issue': {
+      id: '/app/vet/issue'
+      path: '/vet/issue'
+      fullPath: '/app/vet/issue'
+      preLoaderRoute: typeof AppVetIssueRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/vet/compliance': {
+      id: '/app/vet/compliance'
+      path: '/vet/compliance'
+      fullPath: '/app/vet/compliance'
+      preLoaderRoute: typeof AppVetComplianceRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/regulator/violations': {
+      id: '/app/regulator/violations'
+      path: '/regulator/violations'
+      fullPath: '/app/regulator/violations'
+      preLoaderRoute: typeof AppRegulatorViolationsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/regulator/inspections': {
+      id: '/app/regulator/inspections'
+      path: '/regulator/inspections'
+      fullPath: '/app/regulator/inspections'
+      preLoaderRoute: typeof AppRegulatorInspectionsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/regulator/analytics': {
+      id: '/app/regulator/analytics'
+      path: '/regulator/analytics'
+      fullPath: '/app/regulator/analytics'
+      preLoaderRoute: typeof AppRegulatorAnalyticsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/lab/upload': {
+      id: '/app/lab/upload'
+      path: '/lab/upload'
+      fullPath: '/app/lab/upload'
+      preLoaderRoute: typeof AppLabUploadRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/lab/history': {
+      id: '/app/lab/history'
+      path: '/lab/history'
+      fullPath: '/app/lab/history'
+      preLoaderRoute: typeof AppLabHistoryRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/farms/register': {
+      id: '/app/farms/register'
+      path: '/farms/register'
+      fullPath: '/app/farms/register'
+      preLoaderRoute: typeof AppFarmsRegisterRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/farmer/prescriptions': {
+      id: '/app/farmer/prescriptions'
+      path: '/farmer/prescriptions'
+      fullPath: '/app/farmer/prescriptions'
+      preLoaderRoute: typeof AppFarmerPrescriptionsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/farmer/animals': {
+      id: '/app/farmer/animals'
+      path: '/farmer/animals'
+      fullPath: '/app/farmer/animals'
+      preLoaderRoute: typeof AppFarmerAnimalsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/animals/$id': {
+      id: '/app/animals/$id'
+      path: '/animals/$id'
+      fullPath: '/app/animals/$id'
+      preLoaderRoute: typeof AppAnimalsIdRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/admin/users': {
+      id: '/app/admin/users'
+      path: '/admin/users'
+      fullPath: '/app/admin/users'
+      preLoaderRoute: typeof AppAdminUsersRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/admin/settings': {
+      id: '/app/admin/settings'
+      path: '/admin/settings'
+      fullPath: '/app/admin/settings'
+      preLoaderRoute: typeof AppAdminSettingsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/admin/i18n': {
+      id: '/app/admin/i18n'
+      path: '/admin/i18n'
+      fullPath: '/app/admin/i18n'
+      preLoaderRoute: typeof AppAdminI18nRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/admin/audit': {
+      id: '/app/admin/audit'
+      path: '/admin/audit'
+      fullPath: '/app/admin/audit'
+      preLoaderRoute: typeof AppAdminAuditRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
+interface AppRouteChildren {
+  AppAlertsRoute: typeof AppAlertsRoute
+  AppFormularyRoute: typeof AppFormularyRoute
+  AppLogTreatmentRoute: typeof AppLogTreatmentRoute
+  AppProfileRoute: typeof AppProfileRoute
+  AppAdminAuditRoute: typeof AppAdminAuditRoute
+  AppAdminI18nRoute: typeof AppAdminI18nRoute
+  AppAdminSettingsRoute: typeof AppAdminSettingsRoute
+  AppAdminUsersRoute: typeof AppAdminUsersRoute
+  AppAnimalsIdRoute: typeof AppAnimalsIdRoute
+  AppFarmerAnimalsRoute: typeof AppFarmerAnimalsRoute
+  AppFarmerPrescriptionsRoute: typeof AppFarmerPrescriptionsRoute
+  AppFarmsRegisterRoute: typeof AppFarmsRegisterRoute
+  AppLabHistoryRoute: typeof AppLabHistoryRoute
+  AppLabUploadRoute: typeof AppLabUploadRoute
+  AppRegulatorAnalyticsRoute: typeof AppRegulatorAnalyticsRoute
+  AppRegulatorInspectionsRoute: typeof AppRegulatorInspectionsRoute
+  AppRegulatorViolationsRoute: typeof AppRegulatorViolationsRoute
+  AppVetComplianceRoute: typeof AppVetComplianceRoute
+  AppVetIssueRoute: typeof AppVetIssueRoute
+  AppVetLogsRoute: typeof AppVetLogsRoute
+  AppVetPatientsRoute: typeof AppVetPatientsRoute
+  AppAdminIndexRoute: typeof AppAdminIndexRoute
+  AppFarmerIndexRoute: typeof AppFarmerIndexRoute
+  AppFarmsIndexRoute: typeof AppFarmsIndexRoute
+  AppLabIndexRoute: typeof AppLabIndexRoute
+  AppRegulatorIndexRoute: typeof AppRegulatorIndexRoute
+  AppVetIndexRoute: typeof AppVetIndexRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppAlertsRoute: AppAlertsRoute,
+  AppFormularyRoute: AppFormularyRoute,
+  AppLogTreatmentRoute: AppLogTreatmentRoute,
+  AppProfileRoute: AppProfileRoute,
+  AppAdminAuditRoute: AppAdminAuditRoute,
+  AppAdminI18nRoute: AppAdminI18nRoute,
+  AppAdminSettingsRoute: AppAdminSettingsRoute,
+  AppAdminUsersRoute: AppAdminUsersRoute,
+  AppAnimalsIdRoute: AppAnimalsIdRoute,
+  AppFarmerAnimalsRoute: AppFarmerAnimalsRoute,
+  AppFarmerPrescriptionsRoute: AppFarmerPrescriptionsRoute,
+  AppFarmsRegisterRoute: AppFarmsRegisterRoute,
+  AppLabHistoryRoute: AppLabHistoryRoute,
+  AppLabUploadRoute: AppLabUploadRoute,
+  AppRegulatorAnalyticsRoute: AppRegulatorAnalyticsRoute,
+  AppRegulatorInspectionsRoute: AppRegulatorInspectionsRoute,
+  AppRegulatorViolationsRoute: AppRegulatorViolationsRoute,
+  AppVetComplianceRoute: AppVetComplianceRoute,
+  AppVetIssueRoute: AppVetIssueRoute,
+  AppVetLogsRoute: AppVetLogsRoute,
+  AppVetPatientsRoute: AppVetPatientsRoute,
+  AppAdminIndexRoute: AppAdminIndexRoute,
+  AppFarmerIndexRoute: AppFarmerIndexRoute,
+  AppFarmsIndexRoute: AppFarmsIndexRoute,
+  AppLabIndexRoute: AppLabIndexRoute,
+  AppRegulatorIndexRoute: AppRegulatorIndexRoute,
+  AppVetIndexRoute: AppVetIndexRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppRoute: AppRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
