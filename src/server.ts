@@ -40,6 +40,14 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      // FIX FOR VERCEL: Strip /__server from the URL if Vercel rewrites it
+      let url = request.url;
+      const urlObj = new URL(url);
+      if (urlObj.pathname.startsWith('/__server')) {
+        urlObj.pathname = urlObj.pathname.replace('/__server', '') || '/';
+        request = new Request(urlObj.toString(), request);
+      }
+
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);
