@@ -7,6 +7,7 @@ FEATURES.md
 SCREENSHOTS.md
 USER_GUIDE.md
 src
+public
 tsconfig.json
 eslint.config.js
 .eslintignore
