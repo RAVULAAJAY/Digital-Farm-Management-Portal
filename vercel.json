@@ -1,5 +1,6 @@
 {
   "buildCommand": "npm run build",
+  "outputDirectory": "dist/client",
   "framework": "other",
   "nodejs": "20.x",
   "functions": {
@@ -9,6 +10,10 @@
     }
   },
   "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "/api/[...slug]"
