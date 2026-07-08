@@ -457,7 +457,7 @@ The portal is in **demo mode** — any username/password combination works!
 - 📋 Treatment history log
 
 ### **3. National Admin Dashboard**
-![image at]()
+![image at](https://github.com/RAVULAAJAY/Digital-Farm-Management-Portal/blob/4e4cdcc0c9c8b5200dd8efb90b734f412790fab2/public/National%20admin%20dashboard.png)
 
 **Key Sections**:
 - 📈 National Statistics:
@@ -472,7 +472,8 @@ The portal is in **demo mode** — any username/password combination works!
 - ⚙️ Settings & configuration panel
 
 ### **4. Veterinarian Dashboard**
-![image at]()
+![image at](https://github.com/RAVULAAJAY/Digital-Farm-Management-Portal/blob/4e4cdcc0c9c8b5200dd8efb90b734f412790fab2/public/Veterinarian%20Dashboard.png
+)
 
 **Key Sections**:
 - 📊 Stat Cards:
@@ -488,7 +489,7 @@ The portal is in **demo mode** — any username/password combination works!
 - ⚠️ Flagged Entries section (unprescribed AMU)
 
 ### **5. Regulatory Officer Dashboard**
-![image at]()
+![image at](https://github.com/RAVULAAJAY/Digital-Farm-Management-Portal/blob/4e4cdcc0c9c8b5200dd8efb90b734f412790fab2/public/Regulatory%20Officer%20Dashboard.png)
 
 **Key Sections**:
 - 📊 Stat Cards:
@@ -509,7 +510,8 @@ The portal is in **demo mode** — any username/password combination works!
 - 📈 "Open Analytics" for trend analysis
 
 ### **6. Lab Technician Dashboard**
-![image at]()
+![image at](https://github.com/RAVULAAJAY/Digital-Farm-Management-Portal/blob/4e4cdcc0c9c8b5200dd8efb90b734f412790fab2/public/Lab%20Technician%20Dashboard.png
+)
 
 **Key Sections**:
 - 📊 Stat Cards:
