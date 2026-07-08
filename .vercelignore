@@ -7,8 +7,6 @@ FEATURES.md
 SCREENSHOTS.md
 USER_GUIDE.md
 src
-public
-vite.config.ts
 tsconfig.json
 eslint.config.js
 .eslintignore
@@ -16,3 +14,5 @@ package-lock.json
 .env.local
 .env.*.local
 screenshots
+vite.config.ts
+components.json
