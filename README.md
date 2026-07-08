@@ -427,7 +427,7 @@ The portal is in **demo mode** — any username/password combination works!
 ## 📸 Screenshots & Visual Overview
 
 ### **1. Login Page**
-**URL**: `http://localhost:5174`
+  ![image at](https://github.com/RAVULAAJAY/Digital-Farm-Management-Portal/blob/502b4a0c2a2244c74177173eed354d882e3e47c8/public/login-page.png)
 
 **Features visible**:
 - ✅ Government of India branding (top green bar)
@@ -441,7 +441,7 @@ The portal is in **demo mode** — any username/password combination works!
 - ✅ Project description: AMU & MRL monitoring system
 
 ### **2. Farmer Dashboard**
-**URL**: `http://localhost:5174/app/farmer`
+![image at](https://github.com/RAVULAAJAY/Digital-Farm-Management-Portal/blob/229b598d7303f990ab1f10542e53b12594a6d0c6/public/Farmer%20dashboard.png)
 
 **Key Sections**:
 - 📊 Stat Cards showing:
@@ -457,7 +457,7 @@ The portal is in **demo mode** — any username/password combination works!
 - 📋 Treatment history log
 
 ### **3. National Admin Dashboard**
-**URL**: `http://localhost:5174/app/admin`
+![image at](https://github.com/RAVULAAJAY/Digital-Farm-Management-Portal/blob/4e4cdcc0c9c8b5200dd8efb90b734f412790fab2/public/National%20admin%20dashboard.png)
 
 **Key Sections**:
 - 📈 National Statistics:
@@ -472,7 +472,8 @@ The portal is in **demo mode** — any username/password combination works!
 - ⚙️ Settings & configuration panel
 
 ### **4. Veterinarian Dashboard**
-**URL**: `http://localhost:5174/app/vet`
+![image at](https://github.com/RAVULAAJAY/Digital-Farm-Management-Portal/blob/4e4cdcc0c9c8b5200dd8efb90b734f412790fab2/public/Veterinarian%20Dashboard.png
+)
 
 **Key Sections**:
 - 📊 Stat Cards:
@@ -488,7 +489,7 @@ The portal is in **demo mode** — any username/password combination works!
 - ⚠️ Flagged Entries section (unprescribed AMU)
 
 ### **5. Regulatory Officer Dashboard**
-**URL**: `http://localhost:5174/app/regulator`
+![image at](https://github.com/RAVULAAJAY/Digital-Farm-Management-Portal/blob/4e4cdcc0c9c8b5200dd8efb90b734f412790fab2/public/Regulatory%20Officer%20Dashboard.png)
 
 **Key Sections**:
 - 📊 Stat Cards:
@@ -509,7 +510,8 @@ The portal is in **demo mode** — any username/password combination works!
 - 📈 "Open Analytics" for trend analysis
 
 ### **6. Lab Technician Dashboard**
-**URL**: `http://localhost:5174/app/lab`
+![image at](https://github.com/RAVULAAJAY/Digital-Farm-Management-Portal/blob/4e4cdcc0c9c8b5200dd8efb90b734f412790fab2/public/Lab%20Technician%20Dashboard.png
+)
 
 **Key Sections**:
 - 📊 Stat Cards:
