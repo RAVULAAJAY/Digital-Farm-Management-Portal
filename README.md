@@ -441,7 +441,7 @@ The portal is in **demo mode** — any username/password combination works!
 - ✅ Project description: AMU & MRL monitoring system
 
 ### **2. Farmer Dashboard**
-**URL**: `http://localhost:5174/app/farmer`
+![image at](https://github.com/RAVULAAJAY/Digital-Farm-Management-Portal/blob/229b598d7303f990ab1f10542e53b12594a6d0c6/public/Farmer%20dashboard.png)
 
 **Key Sections**:
 - 📊 Stat Cards showing:
@@ -457,7 +457,7 @@ The portal is in **demo mode** — any username/password combination works!
 - 📋 Treatment history log
 
 ### **3. National Admin Dashboard**
-**URL**: `http://localhost:5174/app/admin`
+![image at]()
 
 **Key Sections**:
 - 📈 National Statistics:
@@ -472,7 +472,7 @@ The portal is in **demo mode** — any username/password combination works!
 - ⚙️ Settings & configuration panel
 
 ### **4. Veterinarian Dashboard**
-**URL**: `http://localhost:5174/app/vet`
+![image at]()
 
 **Key Sections**:
 - 📊 Stat Cards:
@@ -488,7 +488,7 @@ The portal is in **demo mode** — any username/password combination works!
 - ⚠️ Flagged Entries section (unprescribed AMU)
 
 ### **5. Regulatory Officer Dashboard**
-**URL**: `http://localhost:5174/app/regulator`
+![image at]()
 
 **Key Sections**:
 - 📊 Stat Cards:
@@ -509,7 +509,7 @@ The portal is in **demo mode** — any username/password combination works!
 - 📈 "Open Analytics" for trend analysis
 
 ### **6. Lab Technician Dashboard**
-**URL**: `http://localhost:5174/app/lab`
+![image at]()
 
 **Key Sections**:
 - 📊 Stat Cards:
