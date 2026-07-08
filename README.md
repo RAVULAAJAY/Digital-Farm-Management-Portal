@@ -427,7 +427,7 @@ The portal is in **demo mode** — any username/password combination works!
 ## 📸 Screenshots & Visual Overview
 
 ### **1. Login Page**
-**URL**: `http://localhost:5174`
+  ![image at](https://github.com/RAVULAAJAY/Digital-Farm-Management-Portal/blob/502b4a0c2a2244c74177173eed354d882e3e47c8/public/login-page.png)
 
 **Features visible**:
 - ✅ Government of India branding (top green bar)
