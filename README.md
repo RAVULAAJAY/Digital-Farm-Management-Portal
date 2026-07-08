@@ -424,59 +424,134 @@ The portal is in **demo mode** — any username/password combination works!
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots & Visual Overview
 
 ### **1. Login Page**
-![Login Page](/screenshots/login.png)
-- Government of India branding
-- Ministry affiliation display
-- Role selector dropdown
-- DigiLocker OAuth button
-- Multilingual support
+**URL**: `http://localhost:5174`
+
+**Features visible**:
+- ✅ Government of India branding (top green bar)
+- ✅ Ministry affiliation: "DoAH&D · Government of India"
+- ✅ Project title: "Digital Farm Management Portal"
+- ✅ Role selector dropdown (Farmer, Vet, Regulator, Lab, Admin)
+- ✅ Username & Password fields
+- ✅ "Sign in" button
+- ✅ "Login with DigiLocker" OAuth option
+- ✅ Language selector (English, Hindi, Telugu, Tamil, Marathi)
+- ✅ Project description: AMU & MRL monitoring system
 
 ### **2. Farmer Dashboard**
-![Farmer Dashboard](/screenshots/farmer-dashboard.png)
-- Compliance score overview
-- Active treatments tracking
-- Animal health status
-- Days to product clearance
-- Quick "Log New Treatment" action
-- Animal list with detailed status
+**URL**: `http://localhost:5174/app/farmer`
+
+**Key Sections**:
+- 📊 Stat Cards showing:
+  - Compliance score overview
+  - Active treatments count
+  - Days to product clearance
+  - Animal health status
+- 🐄 My Animals section with:
+  - Animal ID, Species, Breed, Status
+  - Last treatment date
+  - Quick actions menu
+- ⚠️ Alerts & Notifications
+- 📋 Treatment history log
 
 ### **3. National Admin Dashboard**
-![Admin Dashboard](/screenshots/admin-dashboard.png)
-- 4,82,000 farms registered
-- 18.3L AMU records
-- 28 states active
-- 0.04% MRL violation rate
-- India AMU heatmap visualization
-- System alerts panel
+**URL**: `http://localhost:5174/app/admin`
+
+**Key Sections**:
+- 📈 National Statistics:
+  - 4,82,000 farms registered
+  - 18.3L AMU records
+  - 28 states active
+  - 0.04% MRL violation rate
+  - 96.2% compliance rate
+- 🗺️ India AMU Heatmap visualization (state-level intensity)
+- 🔔 System alerts panel
+- 👥 User management section
+- ⚙️ Settings & configuration panel
 
 ### **4. Veterinarian Dashboard**
-![Veterinarian Dashboard](/screenshots/vet-dashboard.png)
-- Active prescriptions: 18
-- Patients in withdrawal: 7
-- Monthly prescriptions: 34
-- Compliance rate: 88%
-- Patient table with drug details
-- Quick prescription form
+**URL**: `http://localhost:5174/app/vet`
+
+**Key Sections**:
+- 📊 Stat Cards:
+  - Active prescriptions: 18
+  - Patients in withdrawal: 7
+  - Monthly prescriptions: 34
+  - Compliance rate: 88%
+- 👨‍⚕️ My Patients table with:
+  - Farm ID, Farmer name, Animal ID
+  - Drug prescribed, Issue date, Withdrawal end date
+  - Status indicator, Action buttons
+- 📋 Quick Prescription form for fast entry
+- ⚠️ Flagged Entries section (unprescribed AMU)
 
 ### **5. Regulatory Officer Dashboard**
-![Regulator Dashboard](/screenshots/regulator-dashboard.png)
-- District-level monitoring
-- MRL violations tracking
-- Flagged farms list
-- Export to CSV/PDF
-- State filtering
-- Analytics open option
+**URL**: `http://localhost:5174/app/regulator`
+
+**Key Sections**:
+- 📊 Stat Cards:
+  - Total farms in jurisdiction
+  - AMU records (monthly)
+  - Active withdrawals, MRL violations
+  - Inspections completed, Compliance rate
+- 📋 MRL Violations table:
+  - Farm, Animal, Drug, Residue level vs MRL limit
+  - Status and severity indicators
+- 🚩 Flagged Farms list:
+  - Farm ID, Farmer, Issue type
+  - Severity status, Date reported
+- 📥 Export Options:
+  - "Flagged CSV" button
+  - "Violations CSV" button
+  - "PDF Report" button
+- 📈 "Open Analytics" for trend analysis
 
 ### **6. Lab Technician Dashboard**
-![Lab Dashboard](/screenshots/lab-dashboard.png)
-- Samples pending count
-- Tests completed this month
-- MRL violations detected
-- Upload test results section
-- Sample tracking table
+**URL**: `http://localhost:5174/app/lab`
+
+**Key Sections**:
+- 📊 Stat Cards:
+  - Samples pending count
+  - Tests completed this month
+  - MRL violations detected
+  - Farms tested, Turnaround time
+- 📤 Upload Test Results form:
+  - Farm ID, Sample ID, Animal ID
+  - Sample type, Drug tested
+  - Residue level input
+  - Auto-calculated Pass/Fail status
+- 📋 Recent Results table:
+  - Sample tracking and history
+  - Result status
+  - Quality metrics
+
+---
+
+## 🖼️ How to View Screenshots
+
+**Live Demo** (Recommended):
+1. Run the development server: `npm run dev`
+2. Open browser: `http://localhost:5174`
+3. Login with any credentials (demo mode)
+4. Switch roles using the login page to see all dashboards
+
+**Role-Based Navigation**:
+- **Farmer**: Login → Role: "Farmer"
+- **Veterinarian**: Login → Role: "Veterinarian"
+- **Regulator**: Login → Role: "Regulatory Officer"
+- **Lab**: Login → Role: "Lab Technician"
+- **Admin**: Login → Role: "National Admin"
+
+**Key Visual Elements Across All Dashboards**:
+- 🟢 Green status = Compliant/Good
+- 🟡 Amber status = Warning/Caution
+- 🔴 Red status = Critical/Violation
+- 📊 Stat cards with icons and metrics
+- 📋 Sortable, searchable data tables
+- 🔔 Toast notifications (top-right)
+- 📱 Responsive design (works on desktop & tablets)
 
 ---
 
