@@ -4,6 +4,10 @@
   "framework": "other",
   "nodejs": "20.x",
   "functions": {
+    "api/index.js": {
+      "runtime": "nodejs20.x",
+      "maxDuration": 60
+    },
     "api/[...slug].js": {
       "runtime": "nodejs20.x",
       "maxDuration": 60
@@ -11,12 +15,8 @@
   },
   "routes": [
     {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/api/[...slug]"
+      "dest": "/api/index.js"
     }
   ]
 }
