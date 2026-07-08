@@ -4,7 +4,14 @@ module.exports = async (req, res) => {
     const serverPath = path.join(__dirname, "../dist/server/server.js");
     
     // Dynamic import for ESM module
-    const { default: server } = await import(serverPath);
+    let server;
+    try {
+      const imported = await import(serverPath);
+      server = imported.default || imported;
+    } catch (importError) {
+      console.error("Import error:", importError);
+      throw importError;
+    }
 
     // Build request
     const protocol = req.headers["x-forwarded-proto"] || "http";
@@ -15,12 +22,16 @@ module.exports = async (req, res) => {
     const request = new Request(url.toString(), {
       method: req.method,
       headers: new Headers(req.headers),
-      ...(["POST", "PUT", "PATCH"].includes(req.method) && req.body && {
+      ...(req.body && ["POST", "PUT", "PATCH"].includes(req.method) && {
         body: typeof req.body === "string" ? req.body : JSON.stringify(req.body),
       }),
     });
 
     // Call server's fetch handler
+    if (!server || !server.fetch) {
+      throw new Error(`Invalid server export. Got: ${typeof server}, fetch: ${typeof server?.fetch}`);
+    }
+    
     const response = await server.fetch(request, {}, {});
 
     // Copy headers
@@ -35,7 +46,11 @@ module.exports = async (req, res) => {
   } catch (error) {
     console.error("Handler error:", error);
     res.statusCode = 500;
-    res.setHeader("Content-Type", "text/plain");
-    res.end(`500 - Server Error: ${error.message}`);
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify({ 
+      error: "Server Error", 
+      message: error.message,
+      details: error.stack
+    }));
   }
 };
