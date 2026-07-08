@@ -8,7 +8,14 @@ import { nitro } from "nitro/vite";
 export default defineConfig({
   plugins: [
     tanstackStart(),
-    nitro({ preset: 'vercel' }),
+    nitro({ 
+      preset: 'vercel',
+      vercel: {
+        functions: {
+          runtime: 'nodejs20.x'
+        }
+      }
+    }),
     react(),
     tsconfigPaths(),
     tailwindcss(),
