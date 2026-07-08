@@ -693,19 +693,6 @@ Switch languages using the dropdown in the header!
 - Audit log API
 
 ---
-
-## 📞 Contact & Support
-
-### **Government Ministry**
-- **Ministry of Fisheries, Animal Husbandry & Dairying**
-- Department of Animal Husbandry & Dairying (DoAH&D)
-- Government of India
-
-### **For Issues & Feature Requests**
-- 📧 Email: support@farmmanagement.gov.in
-- 🐛 Report bugs: issues@farmmanagement.gov.in
-- 📞 Helpline: 1800-FARMS-24 (1800-3276-724)
-
 ### **Documentation**
 - Full API Documentation: [docs/api.md](docs/api.md)
 - User Guide: [docs/user-guide.md](docs/user-guide.md)
