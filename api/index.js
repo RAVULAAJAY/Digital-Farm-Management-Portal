@@ -1,25 +1,32 @@
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 export default async function handler(req, res) {
   try {
-    // Import the server module
-    const { default: server } = await import("../dist/server/server.js");
+    // Load the server module
+    const serverPath = path.join(__dirname, "../dist/server/server.js");
+    console.log("Loading server from:", serverPath);
     
-    // Build the full URL properly
+    const { default: server } = await import(serverPath);
+    
+    // Build request
     const protocol = req.headers["x-forwarded-proto"] || "http";
     const host = req.headers["x-forwarded-host"] || req.headers.host || "localhost";
-    const fullUrl = `${protocol}://${host}${req.url}`;
+    const url = new URL(req.url || "/", `${protocol}://${host}`);
     
-    console.log("Handling request:", {
+    console.log("Request:", {
       method: req.method,
-      url: req.url,
-      fullUrl,
+      path: req.url,
+      fullUrl: url.toString(),
     });
     
-    // Create a Request object
-    const request = new Request(fullUrl, {
+    // Create Request object
+    const request = new Request(url.toString(), {
       method: req.method,
       headers: new Headers(req.headers),
-      ...(req.method !== "GET" &&
-      req.method !== "HEAD" &&
+      ...(["POST", "PUT", "PATCH"].includes(req.method) &&
       req.body && {
         body:
           typeof req.body === "string"
@@ -28,22 +35,27 @@ export default async function handler(req, res) {
       }),
     });
 
-    // Call the server's fetch method
+    // Call server's fetch handler
     const response = await server.fetch(request, {}, {});
 
-    // Set response status and headers
+    // Copy headers
     res.statusCode = response.status;
     response.headers.forEach((value, key) => {
       res.setHeader(key, value);
     });
 
-    // Send response body
+    // Send body
     const buffer = await response.arrayBuffer();
     res.end(Buffer.from(buffer));
   } catch (error) {
-    console.error("Server handler error:", error);
+    console.error("Handler error:", error);
     res.statusCode = 500;
     res.setHeader("Content-Type", "text/html");
-    res.end(`<h1>500 - Internal Server Error</h1><pre>${error.message}</pre>`);
+    res.write(
+      `<html><body><h1>500 - Server Error</h1><pre>${
+        error.stack || error.message
+      }</pre></body></html>`
+    );
+    res.end();
   }
 }
